@@ -145,6 +145,17 @@ canvas {
   box-shadow: 0 8px 16px rgba(25, 85, 50, .18);
 }
 .upload span { color: inherit; font-size: 19px; }
+.camera-icon {
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+  vertical-align: -5px;
+}
+.camera-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: currentColor;
+}
 .controls {
   margin-top: 18px;
   padding: 22px 18px 18px;
