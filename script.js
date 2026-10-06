@@ -1,7 +1,7 @@
 const canvas = document.querySelector("#banner");
 const ctx = canvas.getContext("2d");
 const background = new Image();
-background.src = "LY/Sharonnn.png";
+background.src = "LY/Sharon-sem-meeting-pequeno.png";
 
 const fileInput = document.querySelector("#file");
 const zoomInput = document.querySelector("#zoom");
