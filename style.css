@@ -212,6 +212,17 @@ button span { font-size: 19px; vertical-align: -2px; margin-right: 4px; }
   box-shadow: 0 4px 7px rgba(25, 85, 50, .17);
 }
 .download span { font-size: 23px; }
+.download-message {
+  margin: 12px 4px 0;
+  padding: 10px 12px;
+  border: 1px solid #d8e4d1;
+  border-radius: 12px;
+  color: #31523f;
+  background: #f3f8ee;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: center;
+}
 
 footer {
   position: relative;

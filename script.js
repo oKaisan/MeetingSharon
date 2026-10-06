@@ -1,13 +1,14 @@
 const canvas = document.querySelector("#banner");
 const ctx = canvas.getContext("2d");
 const background = new Image();
-background.src = "LY/Sharon-sem-meeting-pequeno.png";
+background.src = "LY/Sharonnn.png";
 
 const fileInput = document.querySelector("#file");
 const zoomInput = document.querySelector("#zoom");
 const rotationInput = document.querySelector("#rotation");
 const controls = document.querySelector("#controls");
 const uploadPanel = document.querySelector("#uploadPanel");
+const downloadMessage = document.querySelector("#downloadMessage");
 const state = { photo: null, zoom: 1, rotation: 0, x: 0, y: 0, dragging: false, lastX: 0, lastY: 0 };
 
 function resizeCanvas() {
@@ -111,11 +112,54 @@ canvas.addEventListener("pointermove", (event) => {
 canvas.addEventListener("pointerup", () => { state.dragging = false; });
 canvas.addEventListener("pointercancel", () => { state.dragging = false; });
 
+function isIOS() {
+  return /iPad|iPhone|iPod/.test(navigator.userAgent)
+    || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+}
+
+function showDownloadMessage() {
+  downloadMessage.textContent = "Banner pronto! Ao publicar, marque @institutosharon.";
+  downloadMessage.hidden = false;
+}
+
 document.querySelector("#download").addEventListener("click", () => {
-  const link = document.createElement("a");
-  link.download = "meu-banner-4-meeting.png";
-  link.href = canvas.toDataURL("image/png");
-  link.click();
+  canvas.toBlob(async (blob) => {
+    if (!blob) return;
+    const filename = "meu-banner-4-meeting.png";
+    const file = new File([blob], filename, { type: "image/png" });
+
+    // iOS Safari does not reliably honor the download attribute. Its native
+    // share sheet lets the user save the generated image to Photos or Files.
+    if (isIOS() && navigator.share && navigator.canShare?.({ files: [file] })) {
+      try {
+        await navigator.share({ files: [file], title: "Meu Banner Oficial" });
+        showDownloadMessage();
+        return;
+      } catch (error) {
+        if (error.name === "AbortError") return;
+      }
+    }
+
+    const url = URL.createObjectURL(blob);
+    if (isIOS()) {
+      // Fallback for older iOS versions: open the full-resolution PNG so it
+      // can be saved with the system share button or a long press.
+      const preview = window.open(url, "_blank");
+      if (!preview) window.location.href = url;
+      showDownloadMessage();
+      setTimeout(() => URL.revokeObjectURL(url), 60000);
+      return;
+    }
+
+    const link = document.createElement("a");
+    link.download = filename;
+    link.href = url;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    showDownloadMessage();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }, "image/png");
 });
 
 background.addEventListener("load", resizeCanvas);
