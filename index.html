@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Crie seu banner oficial do 4º Meeting Instituto Sharon.">
+  <title>4º Meeting | Banner oficial</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="intro">
+      <p class="eyebrow">4º MEETING DO INSTITUTO SHARON</p>
+      <h1>MEETING</h1>
+      <p class="subtitle">Confirme sua presença e compartilhe nas<br>redes sociais.</p>
+      <div class="event-info" aria-label="Informações do evento">
+        <span><span class="icon">▣</span> 20 e 21 de Novembro de 2026</span>
+        <span><span class="icon">⌖</span> Tropical Hotel Manaus</span>
+      </div>
+    </header>
+
+    <section class="creator" aria-label="Criador do banner">
+      <div class="preview-card">
+        <canvas id="banner" aria-label="Pré-visualização do banner"></canvas>
+      </div>
+
+      <div class="upload-panel" id="uploadPanel">
+        <p>Personalize seu banner</p>
+        <span>Adicione uma foto sua para começar</span>
+        <button class="upload" type="button" id="upload"><span>▧</span> Adicionar minha foto</button>
+      </div>
+
+      <div class="controls" id="controls" hidden>
+        <label class="control-row" for="zoom">
+          <span><span class="control-icon">⌕</span> Zoom</span>
+          <input id="zoom" type="range" min="0.7" max="2.5" step="0.01" value="1">
+        </label>
+        <label class="control-row" for="rotation">
+          <span><span class="control-icon">↻</span> Girar</span>
+          <input id="rotation" type="range" min="-180" max="180" step="1" value="0">
+        </label>
+
+        <div class="button-row">
+          <button type="button" id="rotate90"><span>⟳</span> 90°</button>
+          <button type="button" id="reset"><span>⟲</span> Redefinir</button>
+          <button type="button" id="change"><span>▧</span> Trocar</button>
+        </div>
+        <p class="hint">Arraste para posicionar · use dois dedos para dar zoom</p>
+        <button class="download" type="button" id="download"><span>⇩</span> Baixar meu Banner Oficial</button>
+        <input id="file" type="file" accept="image/*" hidden>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>4º Meeting do Instituto Sharon | 20 e 21 de Novembro de 2026 | Manaus | Realização Instituto Sharon</p>
+    <small>Desenvolvido por PK TEC</small>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
