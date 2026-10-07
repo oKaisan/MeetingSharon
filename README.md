@@ -35,4 +35,4 @@ git push -u origin main
 
 O arquivo `index.html` está na raiz e a arte atual é carregada pelo caminho relativo `LY/Sharon-tropical-executive.png`. O hotel correto aparece também no banner baixado. A arte original continua preservada em `LY/Sharonnn.png`.
 
-A fonte Manrope é servida localmente em `assets/fonts/`, com sua licença OFL incluída. O layout se adapta ao celular e ao computador, respeita o tema claro/escuro do dispositivo e desativa a animação de entrada quando a pessoa prefere menos movimento. Os controles de personalização e download continuam no mesmo `script.js`.
+A fonte Manrope é servida localmente em `assets/fonts/`, com sua licença OFL incluída. O layout se adapta ao celular e ao computador, mantém o fundo branco com linhas douradas mesmo no modo escuro do dispositivo e desativa a animação de entrada quando a pessoa prefere menos movimento. Os controles de personalização e download continuam no mesmo `script.js`.
