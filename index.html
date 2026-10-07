@@ -3,21 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Crie seu banner oficial do 4º Meeting Instituto Sharon.">
+  <meta name="description" content="Personalize seu banner do 4º Meeting do Instituto Sharon. Dias 20 e 21 de novembro de 2026, no Hotel Tropical Executive, em Manaus.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="4º Meeting | Banner oficial">
   <meta property="og:description" content="Personalize seu banner oficial do 4º Meeting do Instituto Sharon.">
-  <meta property="og:image" content="https://meeting-sharon.vercel.app/LY/Sharonnn.png">
+  <meta property="og:image" content="https://meeting-sharon.vercel.app/LY/Sharon-tropical-executive.png">
   <meta property="og:image:alt" content="Arte oficial do 4º Meeting do Instituto Sharon">
   <meta property="og:image:type" content="image/png">
   <meta property="og:image:width" content="941">
-  <meta property="og:image:height" content="1680">
+  <meta property="og:image:height" content="1672">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="4º Meeting | Banner oficial">
   <meta name="twitter:description" content="Personalize seu banner oficial do 4º Meeting do Instituto Sharon.">
-  <meta name="twitter:image" content="https://meeting-sharon.vercel.app/LY/Sharonnn.png">
+  <meta name="twitter:image" content="https://meeting-sharon.vercel.app/LY/Sharon-tropical-executive.png">
   <link rel="icon" href="LY/Logo%20instituto%20sharon%20(1).PNG" type="image/png">
   <title>4º Meeting | Banner oficial</title>
+  <link rel="preload" href="assets/fonts/Manrope-Variable.ttf" as="font" type="font/ttf" crossorigin>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -57,29 +58,41 @@
       <path d="M12 3v11M8 10l4 4 4-4"></path>
     </symbol>
   </svg>
+  <header class="site-header">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"><img src="LY/Logo%20instituto%20sharon%20(1).PNG" alt="" width="1536" height="2048"></span>
+      <span>Instituto Sharon<small>Educação e saúde</small></span>
+    </div>
+    <span class="edition">4º Meeting <span>/ 2026</span></span>
+  </header>
+
   <main class="page">
     <header class="intro">
-      <p class="eyebrow">4º MEETING DO INSTITUTO SHARON</p>
-      <h1>MEETING</h1>
-      <p class="subtitle">Confirme sua presença e compartilhe nas<br>redes sociais.</p>
+      <h1>Nos vemos no <span>Meeting.</span></h1>
+      <p class="subtitle">Escolha sua foto, personalize seu banner e mostre que você vai estar com a gente.</p>
       <div class="event-info" aria-label="Informações do evento">
-        <span><svg class="ui-icon" aria-hidden="true"><use href="#icon-calendar"></use></svg> 20 e 21 de Novembro de 2026</span>
-        <span><svg class="ui-icon" aria-hidden="true"><use href="#icon-pin"></use></svg> Tropical Hotel Manaus</span>
+        <div><svg class="ui-icon" aria-hidden="true"><use href="#icon-calendar"></use></svg><span>20 e 21 de novembro<small>2026</small></span></div>
+        <div><svg class="ui-icon" aria-hidden="true"><use href="#icon-pin"></use></svg><span>Hotel Tropical Executive<small>Manaus, Amazonas</small></span></div>
       </div>
     </header>
 
     <section class="creator" aria-label="Criador do banner">
-      <div class="preview-card">
-        <canvas id="banner" aria-label="Pré-visualização do banner"></canvas>
-      </div>
+      <figure class="preview-stage">
+        <div class="preview-card">
+          <canvas id="banner" aria-label="Pré-visualização do seu banner oficial"></canvas>
+        </div>
+        <figcaption><svg class="ui-icon" aria-hidden="true"><use href="#icon-image"></use></svg> Seu banner oficial do 4º Meeting</figcaption>
+      </figure>
 
       <div class="upload-panel" id="uploadPanel">
-        <p>Personalize seu banner</p>
-        <span>Adicione uma foto sua para começar</span>
+        <h2>Esse encontro tem o seu rosto.</h2>
+        <p>Adicione sua foto. Depois, ajuste o enquadramento e baixe seu banner para compartilhar.</p>
         <button class="upload" type="button" id="upload"><svg class="ui-icon" aria-hidden="true"><use href="#icon-camera"></use></svg> Adicionar minha foto</button>
+        <span class="panel-note">Uma foto sua. Um convite para todo mundo.</span>
       </div>
 
       <div class="controls" id="controls" hidden>
+        <div class="controls-heading"><h2>Seu banner, do seu jeito.</h2><p>Ajuste sua foto até ficar como você gosta.</p></div>
         <label class="control-row" for="zoom">
           <span><svg class="ui-icon control-icon" aria-hidden="true"><use href="#icon-zoom"></use></svg> Zoom</span>
           <input id="zoom" type="range" min="0.7" max="2.5" step="0.01" value="1">
@@ -92,19 +105,23 @@
         <div class="button-row">
           <button type="button" id="rotate90"><svg class="ui-icon" aria-hidden="true"><use href="#icon-rotate"></use></svg> 90°</button>
           <button type="button" id="reset"><svg class="ui-icon" aria-hidden="true"><use href="#icon-reset"></use></svg> Redefinir</button>
-          <button type="button" id="change"><svg class="ui-icon" aria-hidden="true"><use href="#icon-image"></use></svg> Trocar</button>
+          <button type="button" id="change"><svg class="ui-icon" aria-hidden="true"><use href="#icon-image"></use></svg> Trocar foto</button>
         </div>
-        <p class="hint">Arraste para posicionar · use dois dedos para dar zoom</p>
-        <button class="download" type="button" id="download"><svg class="ui-icon" aria-hidden="true"><use href="#icon-download"></use></svg> Baixar meu Banner Oficial</button>
-        <p class="download-message" id="downloadMessage" role="status" aria-live="polite" hidden></p>
+        <p class="hint">Arraste a foto no círculo para posicionar. Use o controle de zoom para aproximar.</p>
+        <button class="download" type="button" id="download"><svg class="ui-icon" aria-hidden="true"><use href="#icon-download"></use></svg> Baixar meu banner</button>
+        <p class="download-message" id="downloadMessage" role="status" aria-live="polite" hidden>Banner pronto! Ao publicar, marque <a class="instagram-link" href="https://www.instagram.com/institutosharon/" target="_blank" rel="noopener noreferrer" aria-label="Abrir o Instagram do Instituto Sharon em uma nova aba">@institutosharon</a>.</p>
         <input id="file" type="file" accept="image/*" hidden>
       </div>
     </section>
+    <aside class="sharing-note">
+      <span class="sharing-mark" aria-hidden="true">@</span>
+      <p>Vai publicar? Marque <a class="instagram-link" href="https://www.instagram.com/institutosharon/" target="_blank" rel="noopener noreferrer" aria-label="Abrir o Instagram do Instituto Sharon em uma nova aba">@institutosharon</a><span>Vamos compartilhar a expectativa para esse encontro.</span></p>
+    </aside>
   </main>
 
   <footer>
-    <p>4º Meeting do Instituto Sharon | 20 e 21 de Novembro de 2026 | Manaus | Realização Instituto Sharon</p>
-    <small>Desenvolvido por PK TEC</small>
+    <div class="footer-main"><p>Um encontro do <strong>Instituto Sharon.</strong><span>20 e 21 de novembro de 2026, em Manaus.</span></p><span class="footer-event">4º Meeting</span></div>
+    <div class="footer-bottom"><span>Educação e saúde conectam a gente.</span><small>Desenvolvido por <strong>PK TEC</strong></small></div>
   </footer>
   <script src="script.js"></script>
 </body>

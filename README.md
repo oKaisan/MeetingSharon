@@ -33,4 +33,6 @@ git push -u origin main
 5. Use `./` como diretório de saída, se a Vercel solicitar.
 6. Clique em **Deploy**.
 
-O arquivo `index.html` está na raiz e a arte é carregada pelo caminho relativo `LY/Sharonnn.png`, portanto a publicação funciona tanto no GitHub quanto na Vercel.
+O arquivo `index.html` está na raiz e a arte atual é carregada pelo caminho relativo `LY/Sharon-tropical-executive.png`. O hotel correto aparece também no banner baixado. A arte original continua preservada em `LY/Sharonnn.png`.
+
+A fonte Manrope é servida localmente em `assets/fonts/`, com sua licença OFL incluída. O layout se adapta ao celular e ao computador, respeita o tema claro/escuro do dispositivo e desativa a animação de entrada quando a pessoa prefere menos movimento. Os controles de personalização e download continuam no mesmo `script.js`.

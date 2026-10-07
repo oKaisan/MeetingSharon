@@ -1,7 +1,7 @@
 const canvas = document.querySelector("#banner");
 const ctx = canvas.getContext("2d");
 const background = new Image();
-background.src = "LY/Sharonnn.png";
+background.src = "LY/Sharon-tropical-executive.png";
 
 const fileInput = document.querySelector("#file");
 const zoomInput = document.querySelector("#zoom");
@@ -118,7 +118,6 @@ function isIOS() {
 }
 
 function showDownloadMessage() {
-  downloadMessage.textContent = "Banner pronto! Ao publicar, marque @institutosharon.";
   downloadMessage.hidden = false;
 }
 
