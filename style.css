@@ -74,12 +74,27 @@ h1 {
   font-size: 13px;
 }
 .event-info > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   padding: 6px 10px;
   border-radius: 9px;
   background: rgba(255, 255, 255, .48);
   box-shadow: inset 0 0 0 1px rgba(25, 85, 50, .06);
 }
-.icon, .control-icon { color: var(--gold); font-size: 19px; vertical-align: -2px; margin-right: 4px; }
+.icon-sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+.ui-icon {
+  width: 1.15em;
+  height: 1.15em;
+  display: inline-block;
+  flex: 0 0 auto;
+  vertical-align: -0.2em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 
 .creator {
   margin-top: 35px;
@@ -166,7 +181,7 @@ canvas {
   color: #31523f;
   font-size: 15px;
 }
-.control-row > span { display: block; margin-bottom: 7px; }
+.control-row > span { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; }
 .control-icon { color: #52705a; }
 input[type="range"] {
   width: 100%;
@@ -197,6 +212,7 @@ button:focus-visible, input:focus-visible {
   outline-offset: 4px;
 }
 button span { font-size: 19px; vertical-align: -2px; margin-right: 4px; }
+button > .ui-icon { width: 18px; height: 18px; vertical-align: -4px; margin-right: 5px; }
 .hint {
   margin: 16px 0;
   color: #6a796f;
@@ -211,7 +227,7 @@ button span { font-size: 19px; vertical-align: -2px; margin-right: 4px; }
   min-height: 57px;
   box-shadow: 0 4px 7px rgba(25, 85, 50, .17);
 }
-.download span { font-size: 23px; }
+.download > .ui-icon { width: 22px; height: 22px; vertical-align: -6px; }
 .download-message {
   margin: 12px 4px 0;
   padding: 10px 12px;
