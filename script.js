@@ -1,7 +1,7 @@
 const canvas = document.querySelector("#banner");
 const ctx = canvas.getContext("2d");
 const background = new Image();
-background.src = "LY/Sharon-tropical-executive.png";
+background.src = "LY/Meetingofc.png";
 
 const fileInput = document.querySelector("#file");
 const zoomInput = document.querySelector("#zoom");
@@ -25,9 +25,9 @@ function draw() {
   if (!state.photo) return;
 
   // Keep the photo inside the inner edge of the gold frame.
-  const cx = canvas.width * 0.5;
-  const cy = canvas.height * (964 / 1672);
-  const radius = canvas.width * (197 / 941);
+  const cx = canvas.width * (474 / 941);
+  const cy = canvas.height * (523 / 1672);
+  const radius = canvas.width * (196 / 941);
   ctx.save();
   ctx.beginPath();
   ctx.arc(cx, cy, radius, 0, Math.PI * 2);
@@ -46,10 +46,10 @@ function draw() {
   const sy = canvas.height / 1672;
   ctx.save();
   ctx.beginPath();
-  ctx.moveTo(0, 1207 * sy);
-  ctx.lineTo(250 * sx, 1207 * sy);
-  ctx.quadraticCurveTo(470 * sx, 1098 * sy, 700 * sx, 1128 * sy);
-  ctx.lineTo(canvas.width, 1128 * sy);
+  ctx.moveTo(0, 745 * sy);
+  ctx.lineTo(258 * sx, 745 * sy);
+  ctx.quadraticCurveTo(470 * sx, 649 * sy, 700 * sx, 673 * sy);
+  ctx.lineTo(canvas.width, 673 * sy);
   ctx.lineTo(canvas.width, canvas.height);
   ctx.lineTo(0, canvas.height);
   ctx.closePath();
